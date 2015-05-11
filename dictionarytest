@@ -1,0 +1,29 @@
+import sys
+import os
+
+d1={'a':1, 'b':1, 'c':1}
+d2={'a':1, 'b':2}
+a= d2.keys()
+b = 'world'
+c = sorted(b)
+print "This is c ", c
+e = str()
+#for x in c:
+#    e=e+(x)
+e="".join(c)
+print "This is e ", e
+
+#c[1] = 'G'
+
+for x in a:
+    print x
+    if x in d1:
+        print 'First loop yes'
+S = list()
+if d2.iterkeys() in d1:
+    print ('D2 is in D1')
+else:
+    print ("not")
+print sorted(d1,reverse=True)
+print d1['c']
+print (ord(c[1]))
