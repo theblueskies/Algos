@@ -29,13 +29,16 @@ class MergeSort(object):
         return result
 
     def mergeSort(self, alist):
+        if len(alist) == 1:
+            print alist
+            return alist
         if len(alist)>1:
             mid = len(alist)//2
             lefthalf = alist[:mid]
             righthalf = alist[mid:]
 
-            self.mergeSort(lefthalf)
-            self.mergeSort(righthalf)
+            lefthalf = self.mergeSort(lefthalf)
+            righthalf = self.mergeSort(righthalf)
 
             i=0
             j=0
