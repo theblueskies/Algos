@@ -8,7 +8,7 @@ class LeafNodePrint(Tree):
             return
         else:
             if not (current_node.left_child or current_node.right_child):
-                print (current_node.key, end=' ')
+                current_node.print_node()
             if current_node.left_child:
                 self.print_leaf_nodes(current_node=current_node.left_child)
             if current_node.right_child:

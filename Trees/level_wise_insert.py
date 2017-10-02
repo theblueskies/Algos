@@ -42,7 +42,8 @@ class Tree(object):
         queue.append(self.root)
         while queue:
             current_node = queue.pop(0)
-            print (current_node.key, end=' ')
+            current_node.print_node()
+            # print (current_node.key, end=' ')
             if current_node.left_child:
                 queue.append(current_node.left_child)
             if current_node.right_child:
