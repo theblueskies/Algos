@@ -1,8 +1,5 @@
-class Node(object):
-    def __init__(self, value=None):
-        self.key = value
-        self.left_child = None
-        self.right_child = None
+from node import Node
+
 
 class Tree(object):
     def __init__(self):
@@ -52,6 +49,7 @@ class Tree(object):
                 queue.append(current_node.right_child)
 
 
-instance = Tree()
-instance.level_wise_insert([1,2,3,4,5,6,7,8,9])
-instance.level_wise_print()
+if __name__ == "__main__":
+    tree_instance = Tree()
+    tree_instance.level_wise_insert([1,2,3,4,5,6,7,8,9])
+    tree_instance.level_wise_print()
