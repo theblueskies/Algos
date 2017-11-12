@@ -1,9 +1,9 @@
 # Python program to print all permutations with
 # duplicates allowed
- 
+
 def toString(List):
     return ''.join(List)
- 
+
 # Function to print permutations of string
 # This function takes three parameters:
 # 1. String
@@ -11,16 +11,14 @@ def toString(List):
 # 3. Ending index of the string.
 def permute(a, l, r):
     if l==r:
-        print toString(a)
+        print (toString(a))
     else:
         for i in range(l,r+1):
-            print ('l = ', l, ' r= ', r)
             a[l], a[i] = a[i], a[l]
-            # print ('before backtrack ', a)
             permute(a, l+1, r)
             a[l], a[i] = a[i], a[l] # backtrack
 
-# Driver program to test the above function
+
 string = "ABC"
 n = len(string)
 a = list(string)
