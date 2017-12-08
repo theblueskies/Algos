@@ -1,3 +1,4 @@
+import math
 from node import Node
 
 
@@ -22,7 +23,7 @@ class Tree(object):
 
             # If both the children of the current_node have been filled,
             # get the next node from the queue.
-            if current_node.left_child and current_node.right_child:
+            while current_node.left_child and current_node.right_child:
                 current_node = queue.pop(0)
 
             # This next if elif block fills the children of a given node, before
@@ -40,14 +41,24 @@ class Tree(object):
     def level_wise_print(self):
         queue = []
         queue.append(self.root)
+        elements_to_print = 1
+        count_of_prints = 0
+        level = 0
         while queue:
-            current_node = queue.pop(0)
-            current_node.print_node()
-            # print (current_node.key, end=' ')
-            if current_node.left_child:
-                queue.append(current_node.left_child)
-            if current_node.right_child:
-                queue.append(current_node.right_child)
+            elements_to_print = int(math.pow(2, level))
+            while count_of_prints != elements_to_print:
+                if not queue:
+                    break
+                current_node = queue.pop(0)
+                print (str(current_node.key) + ' ', end='')
+                if current_node.left_child:
+                    queue.append(current_node.left_child)
+                if current_node.right_child:
+                    queue.append(current_node.right_child)
+                count_of_prints += 1
+            level+=1
+            count_of_prints = 0
+            print()
 
 
 if __name__ == "__main__":
